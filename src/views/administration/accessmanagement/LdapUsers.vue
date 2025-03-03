@@ -30,6 +30,7 @@ import CreateLdapUserModal from './CreateLdapUserModal';
 import bootstrapTableMixin from '../../../mixins/bootstrapTableMixin';
 import EventBus from '../../../shared/eventbus';
 import ActionableListGroupItem from '../../components/ActionableListGroupItem';
+import SelectProjectModal from './SelectProjectModal';
 import SelectTeamModal from './SelectTeamModal';
 import SelectPermissionModal from './SelectPermissionModal';
 import permissionsMixin from '../../../mixins/permissionsMixin';
@@ -126,12 +127,23 @@ export default {
                         <actionable-list-group-item :add-icon="true" v-on:actionClicked="$root.$emit('bv::show::modal', 'selectPermissionModal')"/>
                       </div>
                     </b-form-group>
+                    <b-form-group :label="this.$t('admin.roles')">
+                      <div>
+                        <b-table striped hover :items="roles" :fields="roleFields" :per-page="5" :current-page="currentPage" small>
+                          <template v-slot:cell(actions)="data">
+                            <b-button size="sm" @click="removeRole(data.item)" variant="danger">{{ $t('admin.remove_role') }}</b-button>
+                          </template>
+                        </b-table>
+                        <b-button size="sm" @click="showRoleModal">{{ $t('admin.add_role') }}</b-button>
+                      </div>
+                    </b-form-group>
                   </b-col>
                   <b-col sm="6">
                     <div style="text-align:right">
                        <b-button variant="outline-danger" @click="deleteUser">{{ $t('admin.delete_user') }}</b-button>
                     </div>
                   </b-col>
+                  <select-project-modal v-on:selection="updateRoleSelection" />
                   <select-team-modal v-on:selection="updateTeamSelection" />
                   <select-permission-modal v-on:selection="updatePermissionSelection" />
                 </b-row>
@@ -139,8 +151,9 @@ export default {
             mixins: [permissionsMixin],
             components: {
               ActionableListGroupItem,
-              SelectTeamModal,
+              SelectProjectModal,
               SelectPermissionModal,
+              SelectTeamModal,
             },
             data() {
               return {
@@ -148,6 +161,7 @@ export default {
                 username: row.username,
                 teams: row.teams,
                 permissions: row.permissions,
+                roles: row.roles,
               };
             },
             methods: {
@@ -200,6 +214,57 @@ export default {
                 let url = `${this.$api.BASE_URL}/${this.$api.URL_USER}/${this.username}/membership`;
                 this.axios
                   .delete(url, { data: { uuid: teamUuid } })
+                  .then((response) => {
+                    this.syncVariables(response.data);
+                    EventBus.$emit(
+                      'admin:ldapusers:rowUpdate',
+                      index,
+                      this.ldapUser,
+                    );
+                    this.$toastr.s(this.$t('message.updated'));
+                  })
+                  .catch((error) => {
+                    this.$toastr.w(this.$t('condition.unsuccessful_action'));
+                  });
+              },
+              updateRoleSelection: function (selections) {
+                this.$root.$emit('bv::hide::modal', 'selectProjectModal');
+                for (let i = 0; i < selections.length; i++) {
+                  let selection = selections[i];
+                  let url = `${this.$api.BASE_URL}/${this.$api.URL_USER}/${this.username}/role`;
+                  this.axios
+                    .post(url, {
+                      uuid: selection.uuid,
+                    })
+                    .then((response) => {
+                      this.syncVariables(response.data);
+                      EventBus.$emit(
+                        'admin:ldapusers:rowUpdate',
+                        index,
+                        this.ldapUser,
+                      );
+                      this.$toastr.s(this.$t('message.updated'));
+                    })
+                    .catch((error) => {
+                      if (error.response.status === 304) {
+                        //this.$toastr.w(this.$t('condition.unsuccessful_action'));
+                      } else {
+                        this.$toastr.w(
+                          this.$t('condition.unsuccessful_action'),
+                        );
+                      }
+                    });
+                }
+              },
+              removeRole: function (role) {
+                let url = `${this.$api.BASE_URL}/${this.$api.URL_USER}/${this.username}/role`;
+                this.axios
+                  .delete(url, {
+                    data: {
+                      roleName: role.name,
+                      projectName: role.projectName,
+                    },
+                  })
                   .then((response) => {
                     this.syncVariables(response.data);
                     EventBus.$emit(
