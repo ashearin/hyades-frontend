@@ -243,20 +243,9 @@ export default {
                   });
               },
               deleteUser: function () {
-                let url = `${this.$api.BASE_URL}/${this.$api.URL_USER_MANAGED}`;
-                this.axios
-                  .delete(url, {
-                    data: {
-                      username: this.username,
-                    },
-                  })
-                  .then((response) => {
-                    EventBus.$emit('admin:managedusers:rowDeleted', index);
-                    this.$toastr.s(this.$t('admin.user_deleted'));
-                  })
-                  .catch((error) => {
-                    this.$toastr.w(this.$t('condition.unsuccessful_action'));
-                  });
+                const url = `${this.$api.BASE_URL}/${this.$api.URL_USER_MANAGED}`;
+                const event = 'admin:managedusers:rowDeleted';
+                this._deleteUser(url, event);
               },
               updateTeamSelection: function (selections) {
                 this.$root.$emit('bv::hide::modal', 'selectTeamModal');
