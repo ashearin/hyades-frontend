@@ -39,7 +39,12 @@
       <b-button size="md" variant="secondary" @click="cancel()">
         {{ $t('message.close') }}
       </b-button>
-      <b-button size="md" variant="primary" @click="createUser()">
+      <b-button
+        size="md"
+        variant="primary"
+        @click="createRole()"
+        :disabled="!name"
+      >
         {{ $t('message.create') }}
       </b-button>
     </template>
@@ -68,11 +73,11 @@ export default {
     };
   },
   methods: {
-    createUser() {
+    createRole() {
       let url = `${this.$api.BASE_URL}/${this.$api.URL_ROLE}`;
       const requestBody = {
         name: this.name,
-        permissions: this.permissions.map((perm) => perm.name),
+        permissions: this.permissions.map((permission) => permission.name),
       };
       this.axios
         .put(url, requestBody)
