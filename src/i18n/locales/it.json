@@ -203,8 +203,6 @@
     "preview": "Anteprima",
     "project": "Progetto",
     "project_access": "Accesso al progetto",
-    "project_membership": "Iscrizione al progetto",
-    "project_name": "Nome del progetto",
     "project_retention_enable": "Abilita l'eliminazione del progetto inattivo",
     "publisher": "Editore",
     "publisher_class": "Classe editore",
@@ -252,7 +250,6 @@
     "role_assigned": "Ruolo assegnato",
     "role_created": "Ruolo creato",
     "role_deleted": "Ruolo eliminato",
-    "role_membership": "Appartenenza al ruolo",
     "role_name": "Nome del ruolo",
     "roles": "Ruoli",
     "scope": "Scopo",
@@ -322,7 +319,11 @@
     "welcome_message_desc": "Personalizza il messaggio di benvenuto che appare nella pagina iniziale di Dependency-Track prima che gli utenti accedano.",
     "welcome_message_enable": "Abilita il messaggio di benvenuto",
     "workflow_step_timeout": "Passaggio Timeout",
-    "workflows": "Flussi di lavoro"
+    "workflows": "Flussi di lavoro",
+    "multiselect_remove_role": "I ruoli possono essere modificati solo",
+    "add_project": "Aggiungi progetto",
+    "role_updated": "Ruolo aggiornato",
+    "permissions_updated": "Autorizzazioni aggiornate"
   },
   "condition": {
     "forbidden": "Proibito (403)",
@@ -346,18 +347,18 @@
     "sha_512": "SHA-512"
   },
   "language": {
-    "de": "Tedesco",
+    "de": "tedesco",
+    "es": "spagnolo",
     "en": "Inglese",
-    "es": "Spagnolo",
-    "fr": "Francese",
-    "hi": "Hindi",
+    "fr": "francese",
+    "hi": "hindi",
     "it": "Italiano",
-    "ja": "Giapponese",
+    "ja": "giapponese",
     "pl": "Polacco",
     "pt": "Portoghese (Portogallo)",
     "pt-BR": "Portoghese (Brasile)",
-    "ru": "Russo",
-    "zh": "Cinese"
+    "ru": "russo",
+    "zh": "cinese"
   },
   "message": {
     "about": "Di",
@@ -978,9 +979,9 @@
   },
   "validation": {
     "confirmed": "{_field_} non corrisponde",
-    "max_value": "Il valore {_field_} dovrebbe essere inferiore a {max}",
-    "min_value": "Il valore di {_field_} deve essere superiore a {min}",
-    "required": "{_field_} è obbligatorio"
+    "max_value": "{_field_} Il valore dovrebbe essere sotto {max}",
+    "min_value": "{_field_} Il valore dovrebbe essere sopra {min}",
+    "required": "{_field_} è richiesto"
   },
   "violation": {
     "fail": "Fallire",

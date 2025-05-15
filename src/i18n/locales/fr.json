@@ -203,8 +203,6 @@
     "preview": "Aperçu",
     "project": "Projet",
     "project_access": "Accès au projet",
-    "project_membership": "Adhésion au projet",
-    "project_name": "Nom du projet",
     "project_retention_enable": "Activer la suppression des projets inactifs",
     "publisher": "Éditeur",
     "publisher_class": "Classe d'éditeur",
@@ -252,7 +250,6 @@
     "role_assigned": "Rôle attribué",
     "role_created": "Rôle créé",
     "role_deleted": "Rôle supprimé",
-    "role_membership": "Adhésion au rôle",
     "role_name": "Nom du rôle",
     "roles": "Rôles",
     "scope": "Périmètre",
@@ -322,7 +319,11 @@
     "welcome_message_desc": "Personnalisez le message de bienvenue qui apparaît sur la page de démarrage de Dependency-Track avant que les utilisateurs ne se connectent.",
     "welcome_message_enable": "Activer le message de bienvenue",
     "workflow_step_timeout": "Délai d'expiration de l'étape",
-    "workflows": "Flux de travail"
+    "workflows": "Flux de travail",
+    "multiselect_remove_role": "Les rôles ne peuvent être modifiés que",
+    "add_project": "Ajouter un projet",
+    "role_updated": "Rôle mis à jour",
+    "permissions_updated": "Autorisations mises à jour"
   },
   "condition": {
     "forbidden": "Interdit (403)",
@@ -347,16 +348,16 @@
   },
   "language": {
     "de": "Allemand",
-    "en": "Anglais",
     "es": "Espagnol",
+    "en": "Anglais",
     "fr": "Français",
-    "hi": "Hindi",
-    "it": "Italien",
-    "ja": "Japonais",
-    "pl": "Polonais",
+    "hi": "hindi",
+    "it": "italien",
+    "ja": "japonais",
+    "pl": "polonais",
     "pt": "Portugais (Portugal)",
     "pt-BR": "Portugais (Brésil)",
-    "ru": "Russe",
+    "ru": "russe",
     "zh": "Chinois"
   },
   "message": {
@@ -978,9 +979,9 @@
   },
   "validation": {
     "confirmed": "{_field_} ne correspond pas",
-    "max_value": "La valeur de {_field_} doit être inférieure à {max}",
-    "min_value": "La valeur de {_field_} doit être supérieure à {min}",
-    "required": "{_field_} est obligatoire"
+    "max_value": "{_field_} La valeur doit être sous {max}",
+    "min_value": "{_field_} La valeur doit être supérieure à {min}",
+    "required": "{_field_} est requis"
   },
   "violation": {
     "fail": "Échec",

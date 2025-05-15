@@ -89,7 +89,7 @@ export default {
         role: this.selectedRole,
         project: this.selectedProject,
       };
-      this.$root.$emit('bv::hide::modal', this.$children[0].id); //or just 'selectRoleModal'
+      this.$root.$emit('bv::hide::modal', this.$children[0].id);
       this.$emit('selection', selection);
     },
 

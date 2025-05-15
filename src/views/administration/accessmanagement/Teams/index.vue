@@ -2,16 +2,11 @@
   <b-card no-body :header="header">
     <b-card-body>
       <div id="customToolbar">
-        <b-button
-          size="md"
-          variant="outline-primary"
-          v-b-modal.createLdapUserModal
-        >
-          <span class="fa fa-plus"></span> {{ $t('admin.create_user') }}
+        <b-button size="md" variant="outline-primary" v-b-modal.createTeamModal>
+          <span class="fa fa-plus"></span> {{ $t('admin.create_team') }}
         </b-button>
       </div>
       <bootstrap-table
-        v-on:refreshTable="refreshTable"
         ref="table"
         :columns="columns"
         :data="data"
@@ -19,26 +14,26 @@
       >
       </bootstrap-table>
     </b-card-body>
-    <create-ldap-user-modal v-on:refreshTable="refreshTable" />
+    <create-team-modal v-on:refreshTable="refreshTable" />
   </b-card>
 </template>
 
 <script>
 import xssFilters from 'xss-filters';
 import common from '../../../../shared/common';
-import CreateLdapUserModal from '../CreateLdapUserModal';
+import CreateTeamModal from '../CreateTeamModal';
 import bootstrapTableMixin from '../../../../mixins/bootstrapTableMixin';
 import EventBus from '../../../../shared/eventbus';
-import UserDetails from './UserDetails.vue';
+import TeamDetails from './TeamDetails.vue';
 
 export default {
-  name: 'LdapUsersView',
+  name: 'TeamsView',
   props: {
     header: String,
   },
   mixins: [bootstrapTableMixin],
   components: {
-    CreateLdapUserModal,
+    CreateTeamModal,
   },
   mounted() {
     EventBus.$on(this.rowEvents.update, (index, row) => {
@@ -56,29 +51,21 @@ export default {
   data() {
     return {
       rowEvents: {
-        update: 'admin:ldapusers:rowUpdate',
-        delete: 'admin:ldapusers:rowDeleted',
+        update: 'admin:teams:rowUpdate',
+        delete: 'admin:teams:rowDeleted',
       },
       columns: [
         {
-          title: this.$t('message.username'),
-          field: 'username',
+          title: this.$t('admin.team_name'),
+          field: 'name',
           sortable: false,
           formatter(value) {
             return xssFilters.inHTMLData(common.valueWithDefault(value, ''));
           },
         },
         {
-          title: this.$t('admin.distinguished_name'),
-          field: 'dn',
-          sortable: false,
-          formatter(value) {
-            return xssFilters.inHTMLData(common.valueWithDefault(value, ''));
-          },
-        },
-        {
-          title: this.$t('admin.teams'),
-          field: 'teams',
+          title: this.$t('admin.api_keys'),
+          field: 'apiKeys',
           sortable: false,
           formatter(value) {
             return value
@@ -86,6 +73,24 @@ export default {
                   common.valueWithDefault(value.length, '0'),
                 )
               : 0;
+          },
+        },
+        {
+          title: this.$t('admin.members'),
+          field: 'members',
+          sortable: false,
+          formatter(value, row) {
+            let count = 0;
+            if (row.managedUsers) {
+              count += row.managedUsers.length;
+            }
+            if (row.ldapUsers) {
+              count += row.ldapUsers.length;
+            }
+            if (row.oidcUsers) {
+              count += row.oidcUsers.length;
+            }
+            return count;
           },
         },
       ],
@@ -109,7 +114,7 @@ export default {
         detailFormatter: (index, row) => {
           return this.vueFormatter({
             render: () => (
-              <UserDetails row={row} index={index} rowEvents={this.rowEvents} />
+              <TeamDetails row={row} index={index} rowEvents={this.rowEvents} />
             ),
           });
         },
@@ -119,7 +124,7 @@ export default {
           res.total = xhr.getResponseHeader('X-Total-Count');
           return res;
         },
-        url: `${this.$api.BASE_URL}/${this.$api.URL_USER_LDAP}`,
+        url: `${this.$api.BASE_URL}/${this.$api.URL_TEAM}`,
       },
     };
   },

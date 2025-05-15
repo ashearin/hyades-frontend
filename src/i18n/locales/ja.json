@@ -203,8 +203,6 @@
     "preview": "プレビュー",
     "project": "プロジェクト",
     "project_access": "プロジェクトへのアクセス",
-    "project_membership": "プロジェクトメンバーシップ",
-    "project_name": "プロジェクト名",
     "project_retention_enable": "非アクティブなプロジェクトの削除を有効にする",
     "publisher": "パブリッシャー",
     "publisher_class": "パブリッシャークラス",
@@ -252,7 +250,6 @@
     "role_assigned": "割り当てられた役割",
     "role_created": "ロールを作成しました",
     "role_deleted": "ロールを削除しました",
-    "role_membership": "ロールメンバーシップ",
     "role_name": "ロール名",
     "roles": "ロール",
     "scope": "スコープ",
@@ -322,7 +319,11 @@
     "welcome_message_desc": "ユーザーがサインインする前に、Dependency-Track の開始ページに表示されるウェルカム メッセージをカスタマイズします。",
     "welcome_message_enable": "ウェルカムメッセージを有効にする",
     "workflow_step_timeout": "ステップタイムアウト",
-    "workflows": "ワークフロー"
+    "workflows": "ワークフロー",
+    "multiselect_remove_role": "役割は変更のみを変更できます",
+    "add_project": "プロジェクトを追加します",
+    "role_updated": "ロールが更新されました",
+    "permissions_updated": "更新された権限"
   },
   "condition": {
     "forbidden": "禁止 (403)",
@@ -347,16 +348,16 @@
   },
   "language": {
     "de": "ドイツ語",
-    "en": "英語",
     "es": "スペイン語",
+    "en": "英語",
     "fr": "フランス語",
     "hi": "ヒンディー語",
     "it": "イタリア語",
     "ja": "日本語",
-    "pl": "ポーランド語",
-    "pt": "ポルトガル語 (ポルトガル)",
-    "pt-BR": "ポルトガル語 (ブラジル)",
-    "ru": "ロシア語",
+    "pl": "研磨",
+    "pt-BR": "ポルトガル語（ブラジル）",
+    "pt": "ポルトガル語（ポルトガル）",
+    "ru": "ロシア",
     "zh": "中国語"
   },
   "message": {
@@ -977,10 +978,10 @@
     "unassigned_severity": "未割り当ての重大度"
   },
   "validation": {
-    "confirmed": "{_field_} が一致しません",
-    "max_value": "{_field_} の値は {max} 未満である必要があります",
-    "min_value": "{_field_} の値は {min} より大きい必要があります",
-    "required": "{_field_} は必須です"
+    "confirmed": "{_field_}は一致しません",
+    "max_value": "{_field_}値は{max}の下にあるはずです",
+    "min_value": "{_field_}値は{min}を超える必要があります",
+    "required": "{_field_}が必要です"
   },
   "violation": {
     "fail": "失敗",

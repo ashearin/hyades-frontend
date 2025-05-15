@@ -203,8 +203,6 @@
     "preview": "Avance",
     "project": "Proyecto",
     "project_access": "Acceso al proyecto",
-    "project_membership": "Membresía del proyecto",
-    "project_name": "Nombre del proyecto",
     "project_retention_enable": "Habilitar la eliminación de proyectos inactivos",
     "publisher": "Editor",
     "publisher_class": "Clase de editor",
@@ -252,7 +250,6 @@
     "role_assigned": "Rol asignado",
     "role_created": "Rol creado",
     "role_deleted": "Rol eliminado",
-    "role_membership": "Membresía de rol",
     "role_name": "Nombre del rol",
     "roles": "Roles",
     "scope": "Alcance",
@@ -322,7 +319,11 @@
     "welcome_message_desc": "Personalice el mensaje de bienvenida que aparece en la página de inicio de Dependency-Track antes de que los usuarios inicien sesión.",
     "welcome_message_enable": "Habilitar mensaje de bienvenida",
     "workflow_step_timeout": "Tiempo de espera del paso",
-    "workflows": "Flujos de trabajo"
+    "workflows": "Flujos de trabajo",
+    "multiselect_remove_role": "Los roles solo se pueden cambiar",
+    "add_project": "Agregar proyecto",
+    "role_updated": "Rol actualizado",
+    "permissions_updated": "Permisos actualizados"
   },
   "condition": {
     "forbidden": "Prohibido (403)",

@@ -202,8 +202,6 @@
     "portfolio_access_control": "पोर्टफोलियो एक्सेस नियंत्रण",
     "preview": "पूर्व दर्शन",
     "project_access": "परियोजना तक पहुंच",
-    "project_membership": "परियोजना सदस्यता",
-    "project_name": "प्रोजेक्ट नाम",
     "project_retention_enable": "निष्क्रिय प्रोजेक्ट विलोपन सक्षम करें",
     "publisher": "प्रकाशक",
     "publisher_class": "प्रकाशक वर्ग",
@@ -248,7 +246,6 @@
     "role_assigned": "सौंपी गई भूमिका",
     "role_created": "भूमिका बनाई गई",
     "role_deleted": "भूमिका हटा दी गई",
-    "role_membership": "भूमिका सदस्यता",
     "role_name": "भूमिका का नाम",
     "roles": "भूमिकाएँ",
     "scope": "दायरा",
@@ -318,7 +315,15 @@
     "welcome_message_desc": "उपयोगकर्ताओं के साइन इन करने से पहले डिपेंडेंसी-ट्रैक के आरंभ पृष्ठ पर दिखाई देने वाले स्वागत संदेश को अनुकूलित करें।",
     "welcome_message_enable": "स्वागत संदेश सक्षम करें",
     "workflow_step_timeout": "चरण समयबाह्य",
-    "workflows": "वर्कफ़्लो"
+    "workflows": "वर्कफ़्लो",
+    "multiselect_remove_role": "भूमिकाएँ केवल बदली जा सकती हैं",
+    "add_project": "प्रोजेक्ट जोड़ें",
+    "role_updated": "अद्यतन की गई भूमिका",
+    "project": "परियोजना",
+    "remove_permission": "अनुमति निकालें",
+    "remove_role": "भूमिका को दूर करना",
+    "remove_team_membership": "सदस्यता निकालें",
+    "permissions_updated": "अनुमतियाँ अद्यतन की गईं"
   },
   "condition": {
     "forbidden": "निषिद्ध (403)",
@@ -343,9 +348,9 @@
   },
   "language": {
     "de": "जर्मन",
-    "en": "अंग्रेज़ी",
     "es": "स्पैनिश",
-    "fr": "फ़्रेंच",
+    "en": "अंग्रेज़ी",
+    "fr": "फ्रांसीसी",
     "hi": "हिंदी",
     "it": "इतालवी",
     "ja": "जापानी",
@@ -974,9 +979,9 @@
   },
   "validation": {
     "confirmed": "{_field_} मेल नहीं खाता",
-    "max_value": "{_field_} मान {max} के अंतर्गत होना चाहिए",
-    "min_value": "{_field_} मान {min} से ऊपर होना चाहिए",
-    "required": "{_field_} आवश्यक है"
+    "max_value": "{_field_} मान {अधिकतम} के तहत होना चाहिए",
+    "min_value": "{_field_} मान {मिनट} से ऊपर होना चाहिए",
+    "required": "{_ये स्थान भरा जाना है"
   },
   "violation": {
     "fail": "असफल",

@@ -203,8 +203,6 @@
     "preview": "Visualização",
     "project": "Projeto",
     "project_access": "Acesso ao projeto",
-    "project_membership": "Associação do projeto",
-    "project_name": "Nome do projeto",
     "project_retention_enable": "Ativar exclusão de projetos inativos",
     "publisher": "Editor",
     "publisher_class": "Classe de editor",
@@ -252,7 +250,6 @@
     "role_assigned": "Função atribuída",
     "role_created": "Função criada",
     "role_deleted": "Função excluída",
-    "role_membership": "Associação de papéis",
     "role_name": "Nome da função",
     "roles": "Funções",
     "scope": "Escopo",
@@ -322,7 +319,11 @@
     "welcome_message_desc": "Personalize a mensagem de boas-vindas que aparece na página inicial do Dependency-Track antes dos usuários fazerem login.",
     "welcome_message_enable": "Ativar mensagem de boas-vindas",
     "workflow_step_timeout": "Tempo limite da etapa",
-    "workflows": "Fluxos de trabalho"
+    "workflows": "Fluxos de trabalho",
+    "multiselect_remove_role": "Os papéis só podem ser alterados",
+    "add_project": "Adicionar projeto",
+    "role_updated": "Função atualizada",
+    "permissions_updated": "Permissões atualizadas"
   },
   "condition": {
     "forbidden": "Proibido (403)",
@@ -347,17 +348,17 @@
   },
   "language": {
     "de": "Alemão",
-    "en": "Inglês",
     "es": "Espanhol",
+    "en": "Inglês",
     "fr": "Francês",
-    "hi": "Hindi",
-    "it": "Italiano",
-    "ja": "Japonês",
-    "pl": "Polonês",
-    "pt": "Português (Portugal)",
+    "hi": "hindi",
+    "it": "italiano",
+    "ja": "japonês",
+    "pl": "polonês",
     "pt-BR": "Português (Brasil)",
-    "ru": "Russo",
-    "zh": "Chinês"
+    "pt": "Português (Portugal)",
+    "ru": "russo",
+    "zh": "chinês"
   },
   "message": {
     "about": "Sobre",
@@ -978,9 +979,9 @@
   },
   "validation": {
     "confirmed": "{_field_} não corresponde",
-    "max_value": "O valor de {_field_} deve estar abaixo de {max}",
-    "min_value": "O valor de {_field_} deve estar acima de {min}",
-    "required": "{_field_} é obrigatório"
+    "max_value": "{_field_} o valor deve estar sob {max}",
+    "min_value": "{_field_} O valor deve estar acima {min}",
+    "required": "{_field_} é necessário"
   },
   "violation": {
     "fail": "Falhar",

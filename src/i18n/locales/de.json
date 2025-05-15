@@ -203,8 +203,6 @@
     "preview": "Vorschau",
     "project": "Projekt",
     "project_access": "Projektzugriff",
-    "project_membership": "Projektmitgliedschaft",
-    "project_name": "Projektname",
     "project_retention_enable": "Aktivieren Sie das Löschen inaktiver Projekte",
     "publisher": "Publisher",
     "publisher_class": "Publisher-Klasse",
@@ -252,7 +250,6 @@
     "role_assigned": "Rolle zugewiesen",
     "role_created": "Rolle erstellt",
     "role_deleted": "Rolle gelöscht",
-    "role_membership": "Rollenmitgliedschaft",
     "role_name": "Rollenname",
     "roles": "Rollen",
     "scope": "Scope",
@@ -322,7 +319,11 @@
     "welcome_message_desc": "Passen Sie die Willkommensnachricht an, die auf der Startseite von Dependency-Track angezeigt wird, bevor sich Benutzer anmelden.",
     "welcome_message_enable": "Willkommensnachricht aktivieren",
     "workflow_step_timeout": "Schritt-Timeout",
-    "workflows": "Workflows"
+    "workflows": "Workflows",
+    "multiselect_remove_role": "Rollen können nur geändert werden",
+    "add_project": "Projekt hinzufügen",
+    "role_updated": "Rolle aktualisiert",
+    "permissions_updated": "Berechtigungen aktualisiert"
   },
   "condition": {
     "forbidden": "Verboten (403)",
@@ -347,17 +348,17 @@
   },
   "language": {
     "de": "Deutsch",
-    "en": "Englisch",
     "es": "Spanisch",
+    "en": "Englisch",
     "fr": "Französisch",
     "hi": "Hindi",
     "it": "Italienisch",
-    "ja": "Japanisch",
-    "pl": "Polnisch",
+    "ja": "japanisch",
+    "pl": "Polieren",
     "pt": "Portugiesisch (Portugal)",
     "pt-BR": "Portugiesisch (Brasilien)",
     "ru": "Russisch",
-    "zh": "Chinesisch"
+    "zh": "chinesisch"
   },
   "message": {
     "about": "Über",
@@ -978,8 +979,8 @@
   },
   "validation": {
     "confirmed": "{_field_} stimmt nicht überein",
-    "max_value": "{_field_} muss größer sein als {max}",
-    "min_value": "{_field_} muss kleiner sein als {min}",
+    "max_value": "{_field_} Wert sollte unter {max} liegen",
+    "min_value": "{_field_} Wert sollte über {min} liegen",
     "required": "{_field_} ist erforderlich"
   },
   "violation": {
