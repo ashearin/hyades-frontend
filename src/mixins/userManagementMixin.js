@@ -119,12 +119,12 @@ export default {
 
     _handleProjectRole: async function (action, projectRole, callbacks = null) {
       this._userManagementMixin_checkReady();
-
+      const { role, project } = projectRole;
       const endpoint = `${this.$api.BASE_URL}/${this.$api.URL_USER_ROLE}`;
       const requestBody = {
         [this._identifierField]: this.row[this._identifierField],
-        roleUUID: projectRole.role,
-        projectUUID: projectRole.project,
+        role,
+        project,
       };
 
       try {
