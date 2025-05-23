@@ -10,7 +10,7 @@ export default {
   created: function () {
     this._userManagementMixin_init();
   },
-  data: { _userManagementMixin_ready: false },
+  data: () => ({ _userManagementMixin_ready: false }),
   methods: {
     // -- public methods --
 
@@ -193,10 +193,12 @@ export default {
         );
       }
 
-      const rowEventsReady =
-        this.rowEvents != null &&
-        this.rowEvents.update != null &&
-        this.rowEvents.delete != null;
+      const rowEventsReady = !!(
+        this.rowEvents &&
+        this.rowEvents.update &&
+        this.rowEvents.delete
+      );
+
       if (!rowEventsReady) {
         console.warn(
           "userManagementMixin: 'rowEvents' object is either undefined or missing properties 'update' or 'delete'. Changes may not reflect properly until refresh.",
