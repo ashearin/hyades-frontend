@@ -215,7 +215,7 @@ export default {
       this.projectRolesPrototype[id].disabled = true;
       const error = (error) => {
         if (error?.response?.status === 304) {
-          this.$toastr.e(this.$t('admin.role_already_assigned'));
+          this.$toastr.w(this.$t('admin.role_already_assigned'));
         }
 
         this.projectRolesPrototype[id].disabled = false;
