@@ -122,6 +122,7 @@
     "github": "GitHub",
     "github_advisories": "GitHub Advisories",
     "gitlab": "GitLab",
+    "gitlab_jwks_path": "GitLab JWKS パス",
     "go_modules": "Go Modules",
     "group": "グループ",
     "hackage": "Hackage",
